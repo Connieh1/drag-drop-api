@@ -23,17 +23,21 @@ createList();
 
 //Insert List Items into DOM
 function createList() {
-  [...billboardTopTen].forEach((album, index) => {
-    const listItem = document.createElement("li");
-    listItem.setAttribute("data-index", index);
-    listItem.innerHTML = `<span class="number">${index + 1}</span>
-      <div className="draggable" draggable="true">
-       <p class="album-name">${album}</p>
-       <i class="fa fas fa-grip-lines"></i>
-      </div>`;
+  [...billboardTopTen]
+    .map((a) => ({ value: a, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map((a) => a.value)
+    .forEach((album, index) => {
+      const listItem = document.createElement("li");
+      listItem.setAttribute("data-index", index);
+      listItem.innerHTML = `<span class="number">${index + 1}</span>
+        <div className="draggable" draggable="true">
+        <p class="album-name">${album}</p>
+        <i class="fa fas fa-grip-lines"></i>
+        </div>`;
 
-    listItems.push(listItem);
+      listItems.push(listItem);
 
-    draggable_list.appendChild(listItem);
-  });
+      draggable_list.appendChild(listItem);
+    });
 }
