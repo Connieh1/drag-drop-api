@@ -32,8 +32,8 @@ function createList() {
       listItem.setAttribute("data-index", index);
       listItem.innerHTML = `<span class="number">${index + 1}</span>
         <div className="draggable" draggable="true">
-        <p class="album-name">${album}</p>
-        <i class="fa fas fa-grip-lines"></i>
+          <p class="album-name">${album}</p>
+          <i class="fas fa-grip-lines"></i>
         </div>`;
 
       listItems.push(listItem);
