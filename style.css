@@ -29,6 +29,7 @@ body {
 .draggable-list li {
   background-color: #fff;
   display: flex;
+  width: 100%;
   flex: 1;
 }
 
@@ -50,15 +51,15 @@ body {
   background-color: #eaeaea;
 }
 
-.draggable-list .person-name {
+.draggable-list .album-name {
   margin: 0 20px 0 0;
 }
 
-.draggable-list li.right .person-name {
+.draggable-list li.right .album-name {
   color: #3ae374;
 }
 
-.draggable-list li.wrong .person-name {
+.draggable-list li.wrong .album-name {
   color: #ff3838;
 }
 
